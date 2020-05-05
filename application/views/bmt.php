@@ -90,7 +90,7 @@
                                     <?php if($this->session->userdata('level') == "0"){ ?>
                                     <td class="datatable-ct">
                                         <a href="<?php echo base_url('C_admin/editbmt/'.$value->id) ?>"><button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                                        <a href="<?php echo base_url('C_admin/deletebmt/'.$value->id) ?>" onclick="return confirm('Apakah anda yakin untuk menghapus data ini?');"><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                        <a href="<?php echo base_url('C_admin/deletebmt/'.$value->id) ?>" onclick="return confirm('Apakah anda yakin untuk menghapus data <?php echo $value->id.'.'.$value->nama ?>?');"><button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                     </td>
                                     <?php } ?>
                                     

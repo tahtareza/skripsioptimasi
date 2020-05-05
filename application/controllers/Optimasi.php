@@ -52,7 +52,7 @@ class Optimasi extends CI_Controller {
 		//mutasi
 		$pmt=$this->input->post('pmt');
 
-		if($n < 3 || $r < 2 || $pcr<=0 || $pmt<=0 || $pcr>=1 || $pmt>=1){
+		if($n < 3 || $r < 2 || $pcr<0 || $pmt<0 || $pcr>=1 || $pmt>=1){
 			$this->load->view('optimasibelum', $data);
 		}else{
 			//proses optimasi

@@ -11,11 +11,13 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"></div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu">
+                                <?php if($this->session->userdata('level') != "0"){ ?>
                                 <a href="<?php echo base_url('C_user/tentukanbmt'); ?>">
                                     <button type="submit" class="btn btn-primary waves-effect waves-light">
                                         <i class="fa fa-arrow-left-square-o" aria-hidden="true"></i>Tentukan BMT
                                     </button>
                                 </a>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>

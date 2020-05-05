@@ -38,7 +38,7 @@
                                                         <label>ID</label>
                                                         <div class="form-group">
                                                             <input type="hidden" name="id_old" value="<?php echo $keb['id'] ?>">
-                                                            <input name="id" type="text" class="form-control" placeholder="Id" value="<?php echo $keb['id'] ?>">
+                                                            <input name="id" type="text" class="form-control" placeholder="Id" value="<?php echo $keb['id'] ?>" readonly>
                                                         </div>
                                                         <label>Nama</label>
                                                         <div class="form-group">
@@ -50,27 +50,27 @@
                                                         </div>
                                                         <label>PK</label>
                                                         <div class="form-group">
-                                                            <input name="pk" type="text" class="form-control" placeholder="PK" value="<?php echo $keb['pk'] ?>">
+                                                            <input name="pk" type="number" step="0.01"  min="0" class="form-control" placeholder="PK" value="<?php echo $keb['pk'] ?>">
                                                         </div>
                                                         <label>EM</label>
                                                         <div class="form-group">
-                                                            <input name="em" type="text" class="form-control" placeholder="EM" value="<?php echo $keb['em'] ?>">
+                                                            <input name="em" type="number" step="0.01"  min="0" class="form-control" placeholder="EM" value="<?php echo $keb['em'] ?>">
                                                         </div>
                                                         <label>Met</label>
                                                         <div class="form-group">
-                                                            <input name="met" type="text" class="form-control" placeholder="Met" value="<?php echo $keb['met'] ?>">
+                                                            <input name="met" type="number" step="0.01"  min="0" class="form-control" placeholder="Met" value="<?php echo $keb['met'] ?>">
                                                         </div>
                                                         <label>Lis</label>
                                                         <div class="form-group">
-                                                            <input name="lis" type="text" class="form-control" placeholder="Lis" value="<?php echo $keb['lis'] ?>">
+                                                            <input name="lis" type="number" step="0.01"  min="0" class="form-control" placeholder="Lis" value="<?php echo $keb['lis'] ?>">
                                                         </div>
                                                         <label>Ca</label>
                                                         <div class="form-group">
-                                                            <input name="ca" type="text" class="form-control" placeholder="Ca" value="<?php echo $keb['ca'] ?>">
+                                                            <input name="ca" type="number" step="0.01"  min="0" class="form-control" placeholder="Ca" value="<?php echo $keb['ca'] ?>">
                                                         </div>
                                                         <label>P</label>
                                                         <div class="form-group">
-                                                            <input name="p" type="text" class="form-control" placeholder="P" value="<?php echo $keb['p'] ?>">
+                                                            <input name="p" type="number" step="0.01"  min="0" class="form-control" placeholder="P" value="<?php echo $keb['p'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>

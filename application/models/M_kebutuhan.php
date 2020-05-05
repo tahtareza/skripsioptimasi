@@ -40,6 +40,14 @@ class M_kebutuhan extends CI_Model{
 		$this->db->insert('kebutuhan', $data);
 	}
 
+	public function getMaxId()
+	{
+		$this->db->select_max('id');
+		$this->db->from('kebutuhan');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 	public function update($data, $where){
 		$this->db->set($data);
 		$this->db->where("id", $where);

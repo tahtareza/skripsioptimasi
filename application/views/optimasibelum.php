@@ -94,9 +94,9 @@
                                                                 <input name="jmliinginterpilih" type="text" class="form-control" value="<?php echo $jmlingin ?>" readonly>
                                                             </div>
                                                             <?php } ?>
-                                                            <?php if($pcr <= 0 || $pcr >= 1){ ?>
+                                                            <?php if($pcr < 0 || $pcr >= 1){ ?>
                                                             <div class="form-group-inner input-with-error">
-                                                                <label>Probabilitas crossover (disarankan bernilai lebih dari 0 atau kurang dari 1)</label>
+                                                                <label>Probabilitas crossover (disarankan bernilai lebih dari sama dengan 0 atau kurang dari 1)</label>
                                                                 <div class="form-select-list">
                                                                     <input name="pcr" type="text" class="form-control" value="<?php echo $pcr ?>" readonly>
                                                                 </div>
@@ -107,9 +107,9 @@
                                                                 <input name="pcr" type="text" class="form-control" value="<?php echo $pcr ?>" readonly>
                                                             </div>
                                                             <?php } ?>
-                                                            <?php if($pmt <= 0 || $pmt >= 1){ ?>
+                                                            <?php if($pmt < 0 || $pmt >= 1){ ?>
                                                             <div class="form-group-inner input-with-error">
-                                                                <label>Probabilitas mutasi (disarankan bernilai lebih dari 0 atau kurang dari 1)</label>
+                                                                <label>Probabilitas mutasi (disarankan bernilai lebih dari sama dengan 0 atau kurang dari 1)</label>
                                                                 <div class="form-select-list">
                                                                     <input name="pmt" type="text" class="form-control" value="<?php echo $pmt ?>" readonly>
                                                                 </div>

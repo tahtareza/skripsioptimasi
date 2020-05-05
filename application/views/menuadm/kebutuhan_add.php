@@ -36,7 +36,9 @@
                                                     <div class="row">
                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                                             <div class="form-group">
-                                                                <input name="id" type="text" class="form-control" placeholder="Id">
+                                                                <?php $plus=1; foreach ($idmax as $value) { ?>
+                                                                <input name="id" type="text" class="form-control" placeholder="Id" value="<?php echo $value['id']+$plus ?>" readonly>
+                                                                <?php } ?>
                                                             </div>
                                                             <div class="form-group">
                                                                 <input name="nama" type="text" class="form-control" placeholder="Nama">
@@ -45,22 +47,22 @@
                                                                 <input name="umur" type="text" class="form-control" placeholder="Umur">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="pk" type="number" class="form-control" placeholder="PK">
+                                                                <input name="pk" type="number" step="0.01"  min="0" class="form-control" placeholder="PK">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="em" type="number" class="form-control" placeholder="EM">
+                                                                <input name="em" type="number" step="0.01"  min="0" class="form-control" placeholder="EM">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="met" type="number" class="form-control" placeholder="Met">
+                                                                <input name="met" type="number" step="0.01"  min="0" class="form-control" placeholder="Met">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="lis" type="number" class="form-control" placeholder="Lis">
+                                                                <input name="lis" type="number" step="0.01"  min="0" class="form-control" placeholder="Lis">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="ca" type="number" class="form-control" placeholder="Ca">
+                                                                <input name="ca" type="number" step="0.01"  min="0" class="form-control" placeholder="Ca">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input name="p" type="number" class="form-control" placeholder="P">
+                                                                <input name="p" type="number" step="0.01"  min="0" class="form-control" placeholder="P">
                                                             </div>
                                                             <div class="form-group">
                                                                 <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>

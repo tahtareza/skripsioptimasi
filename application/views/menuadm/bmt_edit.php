@@ -38,7 +38,7 @@
                                                         <div class="form-group">
                                                             <label>ID</label>
                                                             <input type="hidden" name="id_old" value="<?php echo $bmt['id'] ?>">
-                                                            <input name="id" type="text" class="form-control" placeholder="Id" value="<?php echo $bmt['id'] ?>">
+                                                            <input name="id" type="text" class="form-control" placeholder="Id" value="<?php echo $bmt['id'] ?>" readonly>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Nama</label>
@@ -46,35 +46,45 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label>PK</label>
-                                                            <input name="pk" type="text" class="form-control" placeholder="PK" value="<?php echo $bmt['pk'] ?>">
+                                                            <input name="pk" type="number" step="0.01"  min="0" class="form-control" placeholder="PK" value="<?php echo $bmt['pk'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>EM</label>
-                                                            <input name="em" type="text" class="form-control" placeholder="EM" value="<?php echo $bmt['em'] ?>">
+                                                            <input name="em" type="number" step="0.01"  min="0" class="form-control" placeholder="EM" value="<?php echo $bmt['em'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Met</label>
-                                                            <input name="met" type="text" class="form-control" placeholder="Met" value="<?php echo $bmt['met'] ?>">
+                                                            <input name="met" type="number" step="0.01"  min="0" class="form-control" placeholder="Met" value="<?php echo $bmt['met'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Lis</label>
-                                                            <input name="lis" type="text" class="form-control" placeholder="Lis" value="<?php echo $bmt['lis'] ?>">
+                                                            <input name="lis" type="number" step="0.01"  min="0" class="form-control" placeholder="Lis" value="<?php echo $bmt['lis'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Ca</label>
-                                                            <input name="ca" type="text" class="form-control" placeholder="Ca" value="<?php echo $bmt['ca'] ?>">
+                                                            <input name="ca" type="number" step="0.01"  min="0" class="form-control" placeholder="Ca" value="<?php echo $bmt['ca'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>P</label>
-                                                            <input name="p" type="text" class="form-control" placeholder="P" value="<?php echo $bmt['p'] ?>">
+                                                            <input name="p" type="number" step="0.01"  min="0" class="form-control" placeholder="P" value="<?php echo $bmt['p'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Harga</label>
-                                                            <input name="harga" type="text" class="form-control" placeholder="Umur" value="<?php echo $bmt['harga'] ?>">
+                                                            <input name="harga" type="number" class="form-control" placeholder="Harga" value="<?php echo $bmt['harga'] ?>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Jenis BMT</label>
-                                                            <input name="id_jenis" type="text" class="form-control" placeholder="Umur" value="<?php echo $bmt['id_jenis'] ?>">
+                                                            <select data-placeholder="Pilih jenis bmt.." class="chosen-select" tabindex="-1" name="id_jenis">
+                                                                <?php $select_attribute = ''; 
+                                                                foreach ($jenisbmt as $key => $value) { 
+                                                                    if ($value->id === $bmt['id_jenis'] ) { 
+                                                                        $selected='selected'; 
+                                                                ?>
+                                                                <option value="<?php echo $value->id ?>" <?php echo $selected; ?>><?php echo $value->nama ?></option>
+                                                                <?php }else{ ?>
+                                                                <option value="<?php echo $value->id ?>"><?php echo $value->nama ?></option>
+                                                                <?php } } ?>
+                                                            </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>

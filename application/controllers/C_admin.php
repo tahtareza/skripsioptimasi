@@ -27,7 +27,8 @@ class C_admin extends CI_Controller {
 	}
 	public function addkebutuhan()
 	{
-		$this->load->view('menuadm/kebutuhan_add');
+		$data['idmax'] = $this->M_kebutuhan->getMaxId();
+		$this->load->view('menuadm/kebutuhan_add', $data);
 	}
 	public function editkebutuhan($id)
 	{
@@ -47,11 +48,14 @@ class C_admin extends CI_Controller {
 	}
 	public function addbmt()
 	{
-		$this->load->view('menuadm/bmt_add');
+		$data['idmax'] = $this->M_bmt->getMaxId();
+		$data['jenisbmt']=$this->M_bmt->jenisBmt();
+		$this->load->view('menuadm/bmt_add', $data);
 	}
 	public function editbmt($id)
 	{
 		$data['bmt']=$this->M_bmt->getBmtWhereId($id);
+		$data['jenisbmt']=$this->M_bmt->jenisBmt();
 		$this->load->view('menuadm/bmt_edit', $data);
 	}
 	public function deletebmt($id)

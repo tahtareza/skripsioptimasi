@@ -36,9 +36,23 @@ class M_bmt extends CI_Model{
 		return $data;
 	}
 
+	public function jenisBmt()
+	{
+		$query=$this->db->query("SELECT * FROM jenis_bmt");
+		return $query->result();
+	}
+
 	public function insert($data)
 	{
 		$this->db->insert('bmt', $data);
+	}
+
+	public function getMaxId()
+	{
+		$this->db->select_max('id');
+		$this->db->from('bmt');
+		$query = $this->db->get();
+		return $query->result_array();
 	}
 
 	public function update($data, $where){
