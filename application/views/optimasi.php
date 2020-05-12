@@ -145,9 +145,9 @@
                                                             <?php $plus=1; foreach ($idmaxhistorirekom as $value) { ?>
                                                             <input name="iddetilrekom" type="hidden" class="form-control" value="<?php echo $value['id']+$plus ?>">
                                                             <?php } ?>
-                                                            <div class="form-group">
+                                                            <!-- <div class="form-group">
                                                                 <button type="submit" class="btn btn-primary waves-effect waves-light pull-right">Save to History</button>
-                                                            </div>
+                                                            </div> -->
                                                         </form>
                                                         <?php echo form_close(); ?>
                                                     </div>
@@ -157,9 +157,17 @@
                                                         <form action="#">
                                                         	<?php foreach ($hasil as $value) { ?>
                                                             <input name="bmtopt[]" type="hidden" class="form-control" value="<?php echo $value['id'] ?>">
-                                                            <?php }  foreach ($umur as $value) { ?>
+                                                            <?php } foreach ($umur as $value) { ?>
                                                             <input name="uspil" type="hidden" class="form-control" value="<?php echo $value->id ?>">
+                                                            <?php } foreach ($pilihan as $value) { ?>
+                                                            <input name="id_bmt[]" type="hidden" class="form-control" value="<?php echo $value['id'] ?>">
                                                             <?php } ?>
+                                                            <input name="jml_komp" type="hidden" class="form-control" value="<?php echo $jmlingin ?>">
+                                                            <input name="popsize" type="hidden" class="form-control" value="<?php echo $jmlkrm ?>">
+                                                            <input name="generasi" type="hidden" class="form-control" value="<?php echo $jmlgnrs ?>">
+                                                            <input name="cr" type="hidden" class="form-control" value="<?php echo $pcr ?>">
+                                                            <input name="mr" type="hidden" class="form-control" value="<?php echo $pmt ?>">
+                                                            <input name="fitness" type="hidden" class="form-control" value="<?php echo $fitnesstertinggi ?>">
                                                         	<div class="form-group">
                                                                 <button type="submit" class="btn btn-primary waves-effect waves-light pull-left">Lihat Kandungan</button>
                                                             </div>

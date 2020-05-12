@@ -6,6 +6,7 @@ class Kandopt extends CI_Controller {
 		parent::__construct();
 		$this->load->model('M_kandopt');
 		$this->load->model('M_bmt');
+		$this->load->model('M_history');
 	}
 
 	public function index()
@@ -24,6 +25,22 @@ class Kandopt extends CI_Controller {
 		$data['comparison'] = array_combine($butuh, $totkand);
 
 		$data['bmt']=$this->M_bmt->bmt();
+
+		//forsavehistory
+		$data['tohistory'] = array(
+			'id_rekom'	=>	$this->input->post('bmtopt'),
+			'id_usia'	=>	$this->input->post('uspil'),
+			'id_bmt'	=>	$this->input->post('id_bmt'),
+			'jml_komp'	=>	$this->input->post('jml_komp'),
+			'popsize'	=>	$this->input->post('popsize'),
+			'generasi'	=>	$this->input->post('generasi'),
+			'cr'	=>	$this->input->post('cr'),
+			'mr'	=>	$this->input->post('mr'),
+			'fitness'	=>	$this->input->post('fitness'),
+			'idmaxhistori'	=>	$this->M_history->maxIdHistori(),
+			'idmaxhistoribmt'	=>	$this->M_history->maxIdHistoriBmt(),
+			'idmaxhistorirekom'	=>	$this->M_history->maxIdHistoriRekom()
+		);
 
 		$this->load->view('kandopt', $data);
 	}

@@ -8,15 +8,46 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="breadcome-list single-page-breadcome">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"></div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <?php if($this->session->userdata('level') != "0"){ ?>
+                            <a href="<?php echo base_url('C_user/tentukanbmt'); ?>">
+                                <button type="submit" class="btn btn-primary waves-effect waves-light">
+                                    <i class="fa fa-arrow-left-square-o" aria-hidden="true"></i>Tentukan BMT
+                                </button>
+                            </a>
+                            <?php } ?>
+                        </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="breadcome-menu">
-                                <?php if($this->session->userdata('level') != "0"){ ?>
-                                <a href="<?php echo base_url('C_user/tentukanbmt'); ?>">
+                                <?php if(isset($tohistory)){ ?>
+                                <?php echo form_open_multipart("History/add"); ?>
+                                <?php echo validation_errors(); ?>
+                                <form action="#">
+                                    <?php for ($r=0; $r < sizeof($tohistory['id_rekom']) ; $r++) { ?>
+                                    <input name="id_rekom[]" type="hidden" class="form-control" value="<?php echo $tohistory['id_rekom'][$r] ?>">
+                                    <?php } ?>
+                                    <input name="id_usia" type="hidden" class="form-control" value="<?php echo $tohistory['id_usia'] ?>">
+                                    <?php for ($z=0; $z < sizeof($tohistory['id_bmt']) ; $z++) { ?>
+                                    <input name="id_bmt[]" type="hidden" class="form-control" value="<?php echo $tohistory['id_bmt'][$z] ?>">
+                                    <?php } ?>
+                                    <input name="jml_komp" type="hidden" class="form-control" value="<?php echo $tohistory['jml_komp'] ?>">
+                                    <input name="popsize" type="hidden" class="form-control" value="<?php echo $tohistory['popsize'] ?>">
+                                    <input name="generasi" type="hidden" class="form-control" value="<?php echo $tohistory['generasi'] ?>">
+                                    <input name="cr" type="hidden" class="form-control" value="<?php echo $tohistory['cr'] ?>">
+                                    <input name="mr" type="hidden" class="form-control" value="<?php echo $tohistory['mr'] ?>">
+                                    <input name="fitness" type="hidden" class="form-control" value="<?php echo $tohistory['fitness'] ?>">
+                                    <?php $plus=1; foreach ($tohistory['idmaxhistori'] as $value) { ?>
+                                    <input name="id" type="hidden" class="form-control" value="<?php echo $value['id']+$plus ?>">
+                                    <?php } foreach ($tohistory['idmaxhistoribmt'] as $valu) { ?>
+                                    <input name="iddetilbmt" type="hidden" class="form-control" value="<?php echo $valu['id']+$plus ?>">
+                                    <?php } foreach ($tohistory['idmaxhistorirekom'] as $vale) { ?>
+                                    <input name="iddetilrekom" type="hidden" class="form-control" value="<?php echo $vale['id']+$plus ?>">
+                                    <?php } ?>
                                     <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                        <i class="fa fa-arrow-left-square-o" aria-hidden="true"></i>Tentukan BMT
+                                        <i class="fa fa-arrow-left-square-o" aria-hidden="true"></i>Save to History
                                     </button>
-                                </a>
+                                </form>
+                                <?php echo form_close(); ?>
                                 <?php } ?>
                             </ul>
                         </div>
