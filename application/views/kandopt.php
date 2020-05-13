@@ -205,13 +205,13 @@
                                 </thead>
                                 <tbody>
                                     <?php $sisa=0; $idx=0; $zat=array("Protein Kasar(%)", "Energi(kkal EM/kg)", "Metionin(%)", "Lisin(%)", "Ca(%)", "P(%)"); 
-                                    foreach ($comparison as $kekeyi => $valir) { ?>
+                                    foreach ($comparison as $kekeyi => $valir) { $sisa=$valir-$kekeyi; $arrsisa[]=$sisa; ?>
                                     <tr>
                                         <td><?php echo $zat[$idx] ?></td>
                                         <td><?php echo $kekeyi ?></td>
                                         <td><?php echo $valir ?></td>
-                                        <td><?php echo ($valir-$kekeyi) ?></td>
-                                        <?php if($valir>$kekeyi){ $sisa=$valir-$kekeyi; $arrsisa[]=$sisa; ?>
+                                        <td><?php echo $sisa ?></td>
+                                        <?php if($valir>$kekeyi){ ?>
                                         <td>
                                             <button type="button" class="btn btn-custon-rounded-three btn-success btn-xs"><i class="fa fa-check edu-checked-pro" aria-hidden="true"></i> Terpenuhi</button>
                                         </td>
